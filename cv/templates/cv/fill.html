@@ -1,0 +1,54 @@
+{% extends 'cv/base.html' %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Generator</title>
+  </head>
+  <body>
+    {% block body %}
+      <div class="container">
+        <h1>Generate you cv</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <form method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="name" class="form-control">Your full name:</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-control">Email:</label>
+                <input type="email" name="email" id="email" />
+              </div>
+              <div class="form-group">
+                <label for="summary" class="form-control">Your full summary:</label>
+                <textarea name="summary" id="summary"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="skills" class="form-control">Your skills (seperated by comma):</label>
+                <input type="text" name="skills" id="skills" />
+              </div>
+              <div class="form-group">
+                <label for="education" class="form-control">Your full education:</label>
+                <input type="text" name="education" id="education" />
+              </div>
+              <div class="form-group">
+                <label for="institution" class="form-control">Your full institution:</label>
+                <input type="text" name="institution" id="institution" />
+              </div>
+              <div class="form-group">
+                <label for="prev_work" class="form-control">Your full prev_work:</label>
+                <input type="text" name="prev_work" id="prev_work" />
+              </div>
+              <input type="submit" value="submit" class="btn btn-primary" />
+            </form>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>

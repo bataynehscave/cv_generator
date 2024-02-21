@@ -1,0 +1,40 @@
+{% extends 'cv/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ profile.name }} - cv</title>
+  </head>
+  <body>
+    {% block body %}
+      <div class="container">
+        <div class="row">
+          <h1>{{ profile.name }}</h1>
+        </div>
+        <div class="row">
+          <h6>email: {{ profile.email }}</h6>
+        </div>
+        <hr />
+        <div class="row">
+          <h1>skills</h1>
+          <ul>
+            {% for skill in skills %}
+              <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <hr />
+        <div class="row">
+          <h1>education</h1>
+          <p>{{ profile.education }}</p>
+        </div>
+        <hr />
+        <div class="row">
+          <h1>summary</h1>
+          <p>{{ profile.summary }}</p>
+        </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>
